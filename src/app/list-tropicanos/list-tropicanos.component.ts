@@ -8,7 +8,7 @@ import { NgFor, NgIf } from '@angular/common';
 @Component({
   selector: 'app-list-tropicanos',
   standalone: true,
-  imports: [],
+  imports: [TropicanoComponent, NgIf, NgFor],
   templateUrl: './list-tropicanos.component.html',
   styleUrl: './list-tropicanos.component.css'
 })
@@ -18,9 +18,11 @@ tropicanos:Tropicano[] = [];
 
 constructor(private tropicanoService:TropicanoService) {}
 
-ngOnInit()
+ngOnInit():void
 {
- this.tropicanoService.getTropicanos()
+ this.
+ tropicanoService
+ .getTropicanos()
  .subscribe(tropicanos => this.tropicanos = tropicanos);
 }
 }

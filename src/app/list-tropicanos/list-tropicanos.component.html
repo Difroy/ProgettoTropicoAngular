@@ -1,11 +1,13 @@
 <div class="tropicanolist">
+<div style="padding: 10px;">
+<h2 class="w3-teal"> Our people</h2>
+</div>
+<div *ngIf="!tropicanos"> Loading Tropicanos...</div>
+<div class="w3-row" id="items">
+    <app-tropicano [tropicano]= "t" *ngFor="let t of tropicanos" class="w3-third">
 
-<div **ngIf="!tropicanos"> Loading Tropicanos...</div>
 
-
-<div class="w3-row">
-   
-    <app-tropicano[tropicano] = "t" * *ngFor="let t of tropicanos" class="w3-quarter"> </app-tropicano>
+    </app-tropicano>
 
 
 
