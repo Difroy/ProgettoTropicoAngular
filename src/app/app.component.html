@@ -1,10 +1,10 @@
-<h1 class="w3-teal"> TROPICO </h1>
-<div id="menu">
-    <a routerLink=""> Home </a>
-    <a routerLink="tropicanos"> Tropicanos </a>
-    <a routerLink="buildings"> Buildings </a>
+<div id="menu" class="w3-bar w3-brown w3-padding w3-round-large">
+    <a routerLink="" class="w3-bar-item w3-button w3-hover-light-brown"> Home </a>
+    <a routerLink="tropicanos" class="w3-bar-item w3-button w3-hover-light-brown"> Tropicanos </a>
+    <a routerLink="buildings" class="w3-bar-item w3-button w3-hover-light-brown"> Buildings </a>
 </div>
 
-<!-- quale componente sto graficando in DENTRO router outlet-->
-
-<router-outlet />
+<!-- Componente attualmente visualizzato -->
+<div class="w3-container w3-light-grey w3-padding-16">
+    <router-outlet></router-outlet>
+</div>

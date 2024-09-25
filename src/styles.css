@@ -1,22 +1,71 @@
 @import url('https://www.w3schools.com/w3css/4/w3.css');
 
+/* Stile generale */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2e4d4;
+    margin: 0;
+}
+
+/* Ombra per hover */
 .w3-hover-shadow {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-h2
-{
+/* Intestazioni */
+h1, h2, h3 {
+    font-family: 'Georgia', serif;
     padding: 5px;
+    margin: 0;
 }
 
-
-a
-{
-text-decoration: none;
+h1 {
+    font-size: 36px;
+    color: #ffffff;
 }
 
-#menu a:hover 
-{
+h2 {
+    font-size: 28px;
+    color: #8B4513;
+}
+
+h3 {
+    font-size: 24px;
+    color: #8B4513;
+}
+
+/* Link di navigazione */
+a {
+    text-decoration: none;
+    color: #8B4513;
     font-weight: bold;
-    color: green;
+}
+
+#menu a:hover {
+    font-weight: bold;
+    color: #d2691e;
+}
+
+/* Sezioni e pulsanti */
+.w3-button {
+    background-color: #8B4513;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.w3-button:hover {
+    background-color: #d2691e;
+}
+
+.w3-container {
+    padding: 16px;
+}
+
+footer {
+    background-color: #8B4513;
+    color: #ffffff;
+    padding: 16px;
+    text-align: center;
 }
