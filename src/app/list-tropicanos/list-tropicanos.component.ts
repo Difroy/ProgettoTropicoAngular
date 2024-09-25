@@ -26,41 +26,43 @@ interface Filter
 })
 export class ListTropicanosComponent {
 
-tropicanos:Tropicano[] = [];
+  filter:Filter = {adults:true, children:true, none:true, hs:true, college:true};
+    
+  constructor(public tropicanoService:TropicanoService){}
 
-filter:Filter = {adults:true, children:true};
+  getFilteredTropicanos():Tropicano[]
+  {
+      return this.tropicanoService.getTropicanos().filter(x=>this.matches(x));
+  }
+
+  getVotes():number
+  {
+    return this.getFilteredTropicanos().filter(x=>x.satisfaction>=50 && x.birthyear<=2006).length;        
+  }
+
+  matches(t:Tropicano):boolean
+  {
+      let adult:boolean = t.birthyear <=2006;
+      let child:boolean = !adult;
+
+      if(adult && !this.filter.adults)
+        return false;
+
+      if(child && !this.filter.children)
+        return false;
+
+      if(!this.filter.college && t.education=='COLLEGE')
+        return false;
+      
+      if(!this.filter.hs && t.education=='HS')
+        return false;
+
+      if(!this.filter.none && t.education=='NONE')
+        return false;
 
 
-constructor(private tropicanoService:TropicanoService) {}
-
-
-getFilteredTropicanos(): Tropicano[]
-{
-return this.tropicanoService.getTropicanos().filter(x=>this.matches(x));
-
-
-}
-
-getVotes():number
-{
-  return this.getFilteredTropicanos().filter(x=>x.satisfaction>=50 && x.birthyear<=2006).length;
-
-}
-
-matches(t:Tropicano):boolean
-{
-
-
-
-  let adult:boolean = t.birthyear <= 2006
-  let child:boolean != adult;
-
-
-  if(adult && !this.filter.adults)
-    return false;
-
-  if(child && )
-
+      return true;
+  }
 
 
 }

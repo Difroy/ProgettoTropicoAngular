@@ -1,22 +1,28 @@
-<div class="tropicanolist">
+<div class="listtropicano">
 <div style="padding: 10px;">
 <h2 class="w3-teal"> Our people</h2>
 </div>
 
-<div class="filterform">
-Adults: <input type="checkbox" name="adults" [(ngModel)]="filter.adults"] /> 
+<div class="filterform" style="padding:10px">
+    Adults <input type="checkbox" name="adults" [(ngModel)]="filter.adults" />
+    Children <input type="checkbox" name="children" [(ngModel)]="filter.children" />
+    <br />
+    No education <input type="checkbox" name="none" [(ngModel)]="filter.none" />
+    Hs education <input type="checkbox" name="hs" [(ngModel)]="filter.hs" />
+    College education <input type="checkbox" name="college" [(ngModel)]="filter.college" />
+    <br />
 
+    Matches: {{getFilteredTropicanos().length}} <br />
+    Votes: {{getVotes()}}
 </div>
 
 
-<div *ngIf="!tropicanos"> Loading Tropicanos...</div>
 <div class="w3-row" id="items">
-    <app-tropicano [tropicano]= "t" *ngFor="let t of tropicanos" class="w3-third">
-
+    <app-tropicano [tropicano]="t" *ngFor="let t of getFilteredTropicanos()"
+    class="w3-third"
+    >
 
     </app-tropicano>
-
-
 
 </div>
 
