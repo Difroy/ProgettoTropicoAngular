@@ -19,36 +19,36 @@ interface EducationLevel
 export class TropicanoStatsComponent {
 
 
-  tropicanos:Tropicano[] = [];
-
   ngOnInit():void
   {
-      this
-        .tropicanoService
-        .getTropicanos()
-        .subscribe(tropicanos=>this.tropicanos = tropicanos);
   }
 
   constructor(private tropicanoService:TropicanoService){}
 
   education():EducationLevel
+  
   {
-      let res:EducationLevel = {none:0, hs:0, college:0};
+    let res:EducationLevel = {none:0, hs:0, college:0};
 
-      if(!this.tropicanos)
-        return res;
+    let tropicanos:Tropicano[] = this.tropicanoService.getTropicanos();
 
-      for(let i=0;i<this.tropicanos.length;i++)
-        switch(this.tropicanos[i].education)
-        {
-            case "NONE":
-              res.none++;
-            break;
-            case "HS":
-              res.hs++;
-            break;
-            default:
-              res.college++;
-             }     return res;
-  }
+    if(!this.tropicanoService.tropicanos)
+      return res;
+
+    for(let i=0;i<tropicanos.length;i++)
+      switch(tropicanos[i].education)
+      {
+          case "NONE":
+            res.none++;
+          break;
+          case "HS":
+            res.hs++;
+          break;
+          default:
+            res.college++;
+      }
+      return res;
+}
+
+
 }
