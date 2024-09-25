@@ -7,7 +7,7 @@ import { ListTropicanosComponent } from './list-tropicanos/list-tropicanos.compo
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
+  imports: [RouterOutlet, TropicanoComponent, Trop],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
