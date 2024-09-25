@@ -1,1 +1,36 @@
-<p>tropicano-form works!</p>
+<div class="formnewtropicano">
+    <h2 class="w3-teal"> New Tropicano </h2>
+    <form #f="ngForm">
+        Name
+        <input class="w3-input" required type="text" name="name" [(ngModel)]="tropicano.name" />
+        Surname
+        <input class="w3-input" required type="text" name="surname" [(ngModel)]="tropicano.surname" />
+        Birthyear
+        <input class="w3-input" required type="number" name="birthyear" [(ngModel)]="tropicano.birthyear" min=1900 />
+        Gender
+        <select name="gender" [(ngModel)]="tropicano.gender" required class="w3-input">
+            <option value="M"> Male </option>
+            <option value="F"> Female </option>
+        </select>        
+        Party
+        <select name="party" [(ngModel)]="tropicano.party" required class="w3-input">
+            <option value="LEFT"> LEFT </option>
+            <option value="RIGHT"> RIGHT </option>
+        </select>        
+
+        Education
+        <select name="education" [(ngModel)]="tropicano.education" required class="w3-input">
+            <option value="NONE"> None </option>
+            <option value="HS"> High School </option>
+            <option value="COLLEGE"> College </option>
+        </select>        
+        Satisfaction 
+        <input class="w3-input" required type="number" name="satisfaction" [(ngModel)]="tropicano.satisfaction" min=0 max=100 />
+        <br />
+        <button (click)="save()" [disabled]="!f.valid" class="w3-btn w3-teal w3-input "> Save </button>
+
+    </form>
+
+
+
+</div>
