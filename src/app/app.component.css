@@ -1,0 +1,8 @@
+#menu {
+    display: flex;
+    justify-content: center; /* Centra la navbar orizzontalmente */
+}
+
+.w3-bar-item {
+    margin: 0 10px; /* Aggiungi spazio tra gli elementi del menu */
+}

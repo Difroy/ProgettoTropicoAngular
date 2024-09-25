@@ -9,11 +9,25 @@
         <label>Hs education <input type="checkbox" name="hs" [(ngModel)]="filter.hs" /></label>
         <label>College education <input type="checkbox" name="college" [(ngModel)]="filter.college" /></label>
         <br />
+        <input type="text" name="name" [(ngModel)]="filter.name" placeholder="Name filter"> <br />
+        <input type="text" name="surname" [(ngModel)]="filter.surname" placeholder="Surname filter"> <br />
+        <select name="party" [(ngModel)]="filter.party">
+            <option value="">PARTY FILTER</option>
+            <option value="LEFT">LEFT</option>
+            <option value="RIGHT">RIGHT</option>
+        </select> <br />
+        <select name="satisfaction" [(ngModel)]="filter.satisfaction">
+            <option value="default">SATISFACTION FILTER</option>
+            <option value="LOW"> minus 33</option>
+            <option value="MEDIUM"> between 33 and 66</option>
+            <option value="HIGH">higher than 66</option>
+        </select>
+
         <strong>Matches:</strong> {{getFilteredTropicanos().length}} <br />
         <strong>Votes:</strong> {{getVotes()}}
     </div>
 
     <div class="w3-row" id="items">
-        <app-tropicano [tropicano]="t" *ngFor="let t of getFilteredTropicanos()" class="w3-third"></app-tropicano>
+        <app-tropicano [tropicano]="t" *ngFor="let t of getFilteredTropicanos()" class="w3-third "></app-tropicano>
     </div>
 </div>

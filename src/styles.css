@@ -5,6 +5,8 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f2e4d4;
     margin: 0;
+    background-image: url("app/model/static/images/sfondo.png");
+    
 }
 
 /* Ombra per hover */
@@ -69,3 +71,4 @@ footer {
     padding: 16px;
     text-align: center;
 }
+
