@@ -15,7 +15,7 @@ a
 text-decoration: none;
 }
 
-.menu a:hover 
+#menu a:hover 
 {
     font-weight: bold;
     color: green;
