@@ -2,18 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Tropicano } from '../model/Tropicano';
 //Questo componente renderizza un tropicano.
 
-/*
-interface Tropicano {
-  id: number;
-  name: string;
-  surname: string;
-  birthyear: number;
-  gender: 'M' | 'F';
-  education: 'NONE' | 'HS' | 'COLLEGE';
-  party: 'LEFT' | 'RIGHT';
-  satisfaction: number;
-}
-*/
+
 
 
 @Component({

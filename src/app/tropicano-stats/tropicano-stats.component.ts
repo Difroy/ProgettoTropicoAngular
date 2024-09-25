@@ -2,17 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { TropicanoService } from '../tropicano.service';
 import { Tropicano } from '../model/Tropicano';
 
-
-
-
 interface EducationLevel
 {
     none:number,
     hs:number,
     college:number
 }
-
-
 
 @Component({
   selector: 'app-tropicano-stats',
@@ -54,11 +49,6 @@ export class TropicanoStatsComponent {
             break;
             default:
               res.college++;
-        }
-        return res;
+             }     return res;
   }
-
-
-
-
 }
