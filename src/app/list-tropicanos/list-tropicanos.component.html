@@ -1,32 +1,19 @@
-<div class="listtropicano">
-<div style="padding: 10px;">
-<h2 class="w3-teal"> Our people</h2>
-</div>
+<div class="listtropicano" style="background-color: #f2e4d4; padding: 10px;">
+    <h2 class="w3-brown"> Our People</h2>
 
-<div class="filterform" style="padding:10px">
-    Adults <input type="checkbox" name="adults" [(ngModel)]="filter.adults" />
-    Children <input type="checkbox" name="children" [(ngModel)]="filter.children" />
-    <br />
-    No education <input type="checkbox" name="none" [(ngModel)]="filter.none" />
-    Hs education <input type="checkbox" name="hs" [(ngModel)]="filter.hs" />
-    College education <input type="checkbox" name="college" [(ngModel)]="filter.college" />
-    <br />
+    <div class="filterform" style="padding:10px; background-color: #f2d1b3;">
+        <label>Adults <input type="checkbox" name="adults" [(ngModel)]="filter.adults" /></label>
+        <label>Children <input type="checkbox" name="children" [(ngModel)]="filter.children" /></label>
+        <br />
+        <label>No education <input type="checkbox" name="none" [(ngModel)]="filter.none" /></label>
+        <label>Hs education <input type="checkbox" name="hs" [(ngModel)]="filter.hs" /></label>
+        <label>College education <input type="checkbox" name="college" [(ngModel)]="filter.college" /></label>
+        <br />
+        <strong>Matches:</strong> {{getFilteredTropicanos().length}} <br />
+        <strong>Votes:</strong> {{getVotes()}}
+    </div>
 
-    Matches: {{getFilteredTropicanos().length}} <br />
-    Votes: {{getVotes()}}
-</div>
-
-
-<div class="w3-row" id="items">
-    <app-tropicano [tropicano]="t" *ngFor="let t of getFilteredTropicanos()"
-    class="w3-third"
-    >
-
-    </app-tropicano>
-
-</div>
-
-
-
-
+    <div class="w3-row" id="items">
+        <app-tropicano [tropicano]="t" *ngFor="let t of getFilteredTropicanos()" class="w3-third"></app-tropicano>
+    </div>
 </div>
