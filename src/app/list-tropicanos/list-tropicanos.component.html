@@ -1,1 +1,17 @@
-<p>list-tropicanos works!</p>
+<div class="tropicanolist">
+
+<div **ngIf="!tropicanos"> Loading Tropicanos...</div>
+
+
+<div class="w3-row">
+   
+    <app-tropicano[tropicano] = "t" * *ngFor="let t of tropicanos" class="w3-quarter"> </app-tropicano>
+
+
+
+</div>
+
+
+
+
+</div>

@@ -26,7 +26,7 @@ interface Tropicano {
 
 export class TropicanoComponent
 {
-
+//io non ti fornisco un valore di default, se non ricevi nulla dal padre, vai in crash
   @Input() tropicano!: Tropicano;
 
 

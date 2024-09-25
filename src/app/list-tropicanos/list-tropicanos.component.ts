@@ -17,6 +17,6 @@ constructor(private tropicanoService:TropicanoService) {}
 ngOnInit()
 {
  this.tropicanoService.getTropicanos()
- .subscribe(tropicanos => console.log(tropicanos));
+ .subscribe(tropicanos => this.tropicanos = tropicanos);
 }
 }
