@@ -41,14 +41,25 @@ return this.tropicanoService.getTropicanos().filter(x=>this.matches(x));
 
 }
 
+getVotes():number
+{
+  return this.getFilteredTropicanos().filter(x=>x.satisfaction>=50 && x.birthyear<=2006).length;
 
+}
 
 matches(t:Tropicano):boolean
 {
+
+
+
   let adult:boolean = t.birthyear <= 2006
+  let child:boolean != adult;
 
-  if(adult && !this.)
 
+  if(adult && !this.filter.adults)
+    return false;
+
+  if(child && )
 
 
 
