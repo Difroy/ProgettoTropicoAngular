@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-building',
   standalone: true,
-  imports: [],
+  imports: [NgFor,NgIf],
   templateUrl: './building.component.html',
   styleUrl: './building.component.css'
 })

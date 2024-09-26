@@ -1,1 +1,62 @@
-<p>building works!</p>
+<div class="w3-container">
+    <h2 class="w3-center">Building Details</h2>
+  
+    <div class="w3-row">
+      <div class="w3-col m6">
+        <h3>Building Information</h3>
+        <table class="w3-table w3-bordered">
+          <tr>
+            <th>Name</th>
+            <td>{{ building?.name }}</td>
+          </tr>
+          <tr>
+            <th>Address</th>
+            <td>{{ building?.address }}</td>
+          </tr>
+          <tr>
+            <th>Type</th>
+            <td>{{ building?.buildingType }}</td>
+          </tr>
+          <tr *ngIf="building?.buildingType === 'Residential'">
+            <th>Rent</th>
+            <td>{{ building?.rent }}</td>
+          </tr>
+          <tr *ngIf="building?.buildingType === 'Residential'">
+            <th>Capacity</th>
+            <td>{{ building?.capacity }}</td>
+          </tr>
+          <tr *ngIf="building?.buildingType === 'Industry'">
+            <th>Production</th>
+            <td>{{ building?.production }}</td>
+          </tr>
+          <tr *ngIf="building?.buildingType === 'Industry'">
+            <th>Jobs</th>
+            <td>{{ building?.jobs }}</td>
+          </tr>
+          <tr *ngIf="building?.buildingType === 'Industry'">
+            <th>Product</th>
+            <td>{{ building?.product }}</td>
+          </tr>
+        </table>
+      </div>
+  
+      <div class="w3-col m6">
+        <div *ngIf="building && building.buildingType=='Residential'">
+            <h3>Residents</h3>
+            <ul class="w3-ul w3-border">
+            <li *ngFor="let resident of residents">
+                {{ resident.name }} {{ resident.surname }} ({{ resident.gender }})
+            </li>
+            </ul>
+        </div>
+        <div *ngIf="building && building.buildingType=='Industry'">
+            <h3>Workers</h3>
+            <ul class="w3-ul w3-border">
+              <li *ngFor="let worker of workers">
+                {{ worker.name }} {{ worker.surname }} ({{ worker.gender }})
+              </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
