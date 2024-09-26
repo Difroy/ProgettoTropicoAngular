@@ -23,4 +23,3 @@ export interface BasicBuildingInfo
     buildingType:string;
 
 }
-
