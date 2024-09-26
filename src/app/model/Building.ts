@@ -1,21 +1,26 @@
+import { Tropicano } from "./Tropicano";
 export interface Building {
+    
     id: number;
     name: string;
-    x1: number;
-    x2: number;
-    y1: number;
-    y2: number;
-    area: number;
-    isleId: number;
-    isleName: string;
-    buildingType: string; // "Residential" o "Industry"
-
-    // Campi specifici per Residential
-    capacity?: number;
-    rent?: number;
-
-    // Campi specifici per Industry
-    product?: string;
-    quantity?: number;
-    jobs?: number;
+    address: string;
+    buildingType: "Residential" | "Industry"; // You can use string literals for the types
+    rent?: number; // Optional for Industry
+    capacity?: number; // Optional for Industry
+    production?: number; // Optional for Residential
+    jobs?: number; // Optional for Residential
+    product?: "TOBACCO" | "BANANA" | "ANANAS" | "WHEAT" | "COTTON" | "CARBON" | 
+              "MEAT" | "MILK" | "FUR" | "CIGARS" | "STEEL" | "IRON" | 
+              "JEWELS" | "RUM"; // Only relevant for Industry
+    residents?: Tropicano[]; // Could be replaced with a more specific type, e.g., TropicanoDTO[]
+    workers?: Tropicano[]; // Could be replaced with a more specific type, e.g., TropicanoDTO[]
 }
+
+export interface BasicBuildingInfo
+{
+    id:number;
+    name:string;
+    buildingType:string;
+
+}
+
