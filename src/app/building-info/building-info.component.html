@@ -1,0 +1,31 @@
+<div class="building">
+    <div class="w3-card w3-white w3-margin w3-padding w3-round-large w3-hover-shadow">
+      <div class="w3-row">
+        <!-- Building Name on the first row -->
+        <div class="w3-col s12 w3-padding-small w3-round-top">
+          <h3>{{ building.name }}</h3>
+        </div>
+      </div>
+  
+      <div class="w3-row detail">
+        <div class="w3-col m4 l4">
+          <img alt="Building Image" class="w3-round" />
+        </div>
+        <!-- Building details on the second row and below -->
+        <div class="w3-col m8 l8">
+          <p><strong>Address:</strong> {{ building.address }}</p>
+          <p *ngIf="building.buildingType === 'Residential'"><strong>Rent:</strong> {{ building.rent }}</p>
+          <p *ngIf="building.buildingType === 'Residential'"><strong>Capacity:</strong> {{ building.capacity }}</p>
+          <p *ngIf="building.buildingType === 'Industry'"><strong>Production:</strong> {{ building.production }}</p>
+          <p *ngIf="building.buildingType === 'Industry'"><strong>Jobs:</strong> {{ building.jobs }}</p>
+          <p *ngIf="building.buildingType === 'Industry'"><strong>Product:</strong> {{ building.product }}</p>
+          <a class="w3-btn stdbtn" [routerLink]="['/buildings', building.id]">
+            <!-- vai a building, passa l'id come parametro -->
+            View                  
+          </a>
+
+
+        </div>
+      </div>
+    </div>
+  </div>

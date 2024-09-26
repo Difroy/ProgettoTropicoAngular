@@ -16,14 +16,11 @@ APIURL:string = 'http://localhost:8080/tropico/api/tropicanos';
 
 
 
-getTropicanos():Tropicano[]
+getTropicanos():Observable<Tropicano[]>
 {
-
-  if(this.tropicanos.length==0)
-    this.http.get<Tropicano[]>(this.APIURL).subscribe(tropicanos=>this.tropicanos = tropicanos);
-
-return this.tropicanos;  
+  return this.http.get<Tropicano[]>(this.APIURL);
 }
+
 saveTropicano(t:Tropicano):void
   {
       this              // TROPICANOSERVICE

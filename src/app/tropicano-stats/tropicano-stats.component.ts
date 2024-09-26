@@ -9,16 +9,6 @@ interface EducationLevel
     college:number
 }
 
-interface Statistics
-{
-  adults:number,
-  avgage:number;
-  agemedian:number;
-  avgsatisfaction:number,
-  leftpeople:number,
-  rightpeople:number
-}
-
 @Component({
   selector: 'app-tropicano-stats',
   standalone: true,
@@ -29,26 +19,20 @@ interface Statistics
 export class TropicanoStatsComponent 
 {
 
-  statistics: Statistics = {adults: 0, avgage: 0, agemedian: 0, avgsatisfaction: 0, leftpeople: 0, rightpeople: 0};
+  tropicanos:Tropicano[] =[];
+
+  constructor(public tropicanoService:TropicanoService){}
 
     ngOnInit():void
     {
-      
+      this.tropicanoService.getTropicanos().subscribe(data=>this.tropicanos=data);
     }
-
-    ngDoCheck():void
-    {
-      this.statistics = {adults: 0, avgage: 0, agemedian: 0, avgsatisfaction: 0, leftpeople: 0, rightpeople: 0};
-      this.getStatistics();
-    }
-
-    constructor(public tropicanoService:TropicanoService){}
 
     education():EducationLevel
     {
         let res:EducationLevel = {none:0, hs:0, college:0};
 
-        let tropicanos:Tropicano[] = this.tropicanoService.getTropicanos();
+        let tropicanos:Tropicano[] = this.tropicanos;
 
         if(!this.tropicanoService.tropicanos)
           return res;
@@ -68,6 +52,9 @@ export class TropicanoStatsComponent
           return res;
     }
 
+
+
+
     /**
          * durante il ciclo mi salvo l'età della persona che sta ciclando
          * metto l'età della persona dentro una lista delle età delle persone
@@ -79,7 +66,7 @@ export class TropicanoStatsComponent
          * se la lunghezza è dispari, aggiungo 1 all'indice medio
          * se la lunghezza è pari prenderò il valore dell'indice medio stesso e il valore dopo e farò la media
          */
-    getStatistics():void
+    /*getStatistics():void
     {
       let ageList: number[] = [];
       let totalSatisfaction = 0;
@@ -127,5 +114,15 @@ export class TropicanoStatsComponent
 
       console.log(this.statistics);
     }
+
+/*
+    ngDoCheck():void
+    {
+      this.statistics = {adults: 0, avgage: 0, agemedian: 0, avgsatisfaction: 0, leftpeople: 0, rightpeople: 0};
+      this.getStatistics();
+    }
+*/
+    
+
 
 }

@@ -1,0 +1,19 @@
+.menu IMG
+{
+    margin-left:0.5%;
+    width:250px;
+    height:auto;
+    display:inline-block;
+}
+
+#menuitems A
+{
+    color:white;
+    font-size:150%;
+}
+
+#menuitems A:hover
+{
+    font-weight:bold;
+    color:#f5f127;
+}

@@ -1,23 +1,40 @@
 <div class="tropicano">
   <div class="w3-card w3-white w3-margin w3-padding w3-round-large w3-hover-shadow">
       <div class="w3-row">
+
         <!-- Name and Surname in teal on the first row -->
-        <div class="w3-col s12 w3-brown w3-padding-small w3-round-top">
-          <h3 style="color: white;">{{ tropicano.name }} {{ tropicano.surname }}</h3>
+        <div class="w3-col s12 w3-padding-small w3-round-top">
+          <h3>{{ tropicano.name }} {{ tropicano.surname }}</h3>
         </div>
       </div>
     
-      <div class="w3-row">
+      <div class="w3-row detail" >
+        <div class="w3-col m4 l4" >
+            <img [src]="imageUrl()" />
+        </div>
         <!-- Tropicano details on the second row and below -->
-        <div class="w3-col s12 w3-padding w3-hover-light-brown">
-          <p><strong>ID:</strong> {{ tropicano.id }}</p>
-          <p><strong>Birth Year:</strong> {{ tropicano.birthyear }}</p>
-          <p><strong>Gender:</strong> {{ tropicano.gender }}</p>
-          <p><strong>Istruzione:</strong> {{ tropicano.education }}</p>
+        <div class="w3-col m8 l8 ">
+          <p><strong>Born on</strong> {{tropicano.birthyear}}</p>
+          <p><strong>Religion</strong> {{tropicano.religion}}</p>
+          <p><strong>Education:</strong> {{ tropicano.education }}</p>
           <p><strong>Party:</strong> {{ tropicano.party }}</p>
           <p><strong>Satisfaction:</strong> {{ tropicano.satisfaction }}</p>
+          <p><strong>Works at:</strong> 
+              {{ tropicano.industryName }}
+              <a class="w3-btn stdbtn" *ngIf="tropicano.industryId && tropicano.industryId>0" 
+                [routerLink]="['/buildings', tropicano.industryId]">
+                View                  
+              </a>
+          </p>
+          <p><strong>Residents at:</strong> {{ tropicano.residentialName }}
+            <a class="w3-btn stdbtn" *ngIf="tropicano.residentialId && tropicano.residentialId>0" 
+              [routerLink]="['/buildings', tropicano.residentialId]">
+              <!-- vai a building, passa l'id come parametro -->
+              View                  
+            </a>
+          </p>
+          
         </div>
       </div>
     </div>
 </div>
-

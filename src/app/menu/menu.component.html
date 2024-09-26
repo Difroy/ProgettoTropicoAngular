@@ -1,0 +1,21 @@
+<div class="menu">
+    <div class="w3-row">
+        <div class="w3-col m1 l1">
+            <img src="assets/images/logo.jpeg" />
+        </div>
+        <div class="w3-rest" style="padding-left:2%;padding-top:30px;">
+            <span id="menuitems" >
+
+                <a routerLink="tropicanos"> home </a>               |
+                <a routerLink="tropicanos"> tropicanos </a>         |
+                <a routerLink="buildings"> buildings </a>
+            </span>
+            <br />
+            <span  *ngIf="router.url=='/tropicanos' || router.url=='/newtropicano' || router.url=='/tropicanostats' || router.url=='/'">
+                <a routerLink="tropicanos"> See all </a> |
+                <a routerLink="newtropicano"> New tropicano </a> |
+                <a routerLink="tropicanostats"> Stats </a> 
+            </span>
+        </div>
+    </div>
+</div>
