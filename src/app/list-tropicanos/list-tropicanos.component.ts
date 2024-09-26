@@ -4,6 +4,8 @@ import { TropicanoService } from '../tropicano.service';
 import { TropicanoComponent } from '../tropicano/tropicano.component';
 import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { catchError } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
 
 interface Filter {
   adults: boolean;
@@ -91,4 +93,24 @@ export class ListTropicanosComponent {
     }
     return true;
   }
+
+ngOnInit(): void
+{
+this
+.tropicanoService
+.getTropicanos()
+.pipe(catchError(this.handleError))
+.subscribe(records=>this.tropicanos=records);
+}
+
+handleError(error:HttpErrorResponse):Observable<Tropicano[]>
+{
+
+alert('Error loading tropicanos! Check console')
+console.log({});
+}
+
+
+
+
 }
